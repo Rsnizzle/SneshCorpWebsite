@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SneshCorp&copy;</title>
+    <link rel="icon" type="image/png" href="img/favicon.jpg">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/customStyles.css" rel="stylesheet">
+    <script type="text/javascript">
+    function  validate()
+    {
+      var form = document.getElementById("storeForm");
+
+      //Check Form for Input
+      if (form.firstName.value=="") {
+        alert("Please enter you first name");
+        return false;
+      }
+      else if (form.secondName.value=="") {
+        alert("Please enter your last name");
+        return false;
+      }
+      else if (form.emailAddress.value=="") {
+        alert("Please enter a correct email address");
+        return false;
+      }
+      else if (form.streetNameNum.value==""){
+        alert("Please enter your street number and name");
+        return false;
+      }
+      else if (form.cityAddress.value=="") {
+        alert("Please enter your Town/City");
+        return false;
+      }
+      else if (form.countryAddress.value=="") {
+        alert("Please enter your Country");
+        return false;
+      }
+      else if (form.postCode.value==""){
+        alert("Please enter your postcode");
+        return false;
+      }
+      else if (form.cardNumber.value==""){
+        alert("Please enter a correct card number");
+        return false;
+      }
+      else if (form.cardExpDate.value==""){
+        alert("Please enter the card expiry date");
+        return false;
+      }
+      else if (form.cardType.value=="") {
+        alert("Please select a card type");
+        return false;
+      }
+      else {
+        return true;
+      }
+
+
+      console.log("This is a test");
+    }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom:0">
+      <a class="navbar-brand" href="#">SneshCorp</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="store.html">Store<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li>
+          <a class="nav-link" href="contactUs.html">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <!-- PERSONAL INFORMATION -->
+    <div class="container">
+      <h2 class="text-center">Checkout</h2>
+      <br>
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-body" style="text-left">
+            <form id="storeForm" onsubmit="validation()" method="post" method="...">
+              <div class="content">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="firstName">First Name</label>
+                      <input class="form-control" type="text" name="firstName" id="getFirstName" value="">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input class="form-control" type="text" name="secondName" id="getSecondName" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input class="form-control" type="text" name="emailAddress" id="getEmailAddress" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="Address">Address</label>
+                    <input class="form-control" type="text" name="streetNameNum" id="getStreetNameNum" value="" placeholder="Street Name and Number">
+                    <br>
+                    <input class="form-control "type="text" name="cityAddress" id="getCityAddress" value="" placeholder="Town/City">
+                    <br>
+                    <input class="form-control" type="text" name="countryAddress" id="getCountryAddress" value="" placeholder="Country">
+                    <br>
+                    <input class="form-control "type="text" name="postCode" id="getPostCode" value="" placeholder="Postcode">
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="PaymentDetails">Payment Details</label>
+                    <input class="form-control" type="text" name="cardNumber" id="getCardNumber" value="" placeholder="Card Number (16 Digits)">
+                  </div>
+                  <div class="col-sm-6">
+                    <br>
+                    <label for="cardExpDate">Card Expiry Date</label>
+                    <input class="form-control" type="text" name="cardExpDate" id="getCardExpDate" value="" placeholder="Month and Date Eg: (07-12)">
+                  </div>
+                  <div class="col-sm-6">
+                    <br>
+                    <label for="cardType">Type of Card</label>
+                    <select class="form-control" name="cardType" id="getCardType" placeholder="Card Type">
+                      <option value="" disabled selected hidden>Please Choose...</option>
+                      <option value="">Visa Debit</option>
+                      <option value="">Mastercard</option>
+                      <option value="">American Express</option>
+                      <option value="">Maestro</option>
+                      <option value="">Bitcoin</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <br>
+                    <button type="button" class="btn btn-primary" name="buttonSubmit" onClick="validate();">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- SIDE LIST -->
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>Cart</h4></div>
+          <div class="panel-body">
+            <p>Items...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+
+    </div>
+  </body>
+  <footer class="footerSticky" style="padding-bottom: 9px">
+    <h5 class="text-center">SneshCorp&copy;</h5>
+  </footer>
+</html>
